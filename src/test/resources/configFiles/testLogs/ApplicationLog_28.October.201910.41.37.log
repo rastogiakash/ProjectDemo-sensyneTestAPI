@@ -1,0 +1,22 @@
+28/10/2019 22:41:37 automation Reading Environment configuration file
+28/10/2019 22:41:37 automation Reading src//test//resources//configFiles//testData//Config_Test.xlsx
+28/10/2019 22:41:37 automation Reading readEnviromentsUrls
+28/10/2019 22:41:37 automation Environment configuration file sucessfully readed
+28/10/2019 22:41:40 automation Response is  : {
+    "id": 2,
+    "name": "Personalised cufflinks",
+    "price": "45.00"
+}
+28/10/2019 22:41:40 automation Response is  : {
+    "detail": "The method is not allowed for the requested URL.",
+    "status": 405,
+    "title": "Method Not Allowed",
+    "type": "about:blank"
+}
+28/10/2019 22:41:40 automation Response is  : 
+28/10/2019 22:41:40 automation Response is  : {
+    "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+    "status": 404,
+    "title": "Not Found",
+    "type": "about:blank"
+}

@@ -1,0 +1,454 @@
+{
+  "$id": "http://example.com/resource.json",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "required": [
+    "_id",
+    "_bssVer",
+    "_ver",
+    "_created",
+    "_lastModified",
+    "_resourceType",
+    "content",
+    "security",
+    "scope",
+    "extensions"
+  ],
+  "properties": {
+    "_id": {
+      "type": "string",
+      "format": "uuid",
+      "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+    },
+    "_bssVer": {
+      "type": "integer",
+      "format": "int64",
+      "example": 1
+    },
+    "_ver": {
+      "type": "string",
+      "format": "uuid",
+      "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+    },
+    "_created": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2018-05-18T19:16:15+00:00"
+    },
+    "_lastModified": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2018-05-18T19:16:15+00:00"
+    },
+    "expiresOn": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "label": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "_resourceType": {
+      "$ref": "#/definitions/ResourceType_Enum"
+    },
+    "content": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "category",
+            "service"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "$ref": "#/definitions/ContentCategory_Enum"
+            },
+            "model": {
+              "type": "string"
+            },
+            "service": {
+              "type": "object",
+              "required": [
+                "style",
+                "url",
+                "method"
+              ],
+              "properties": {
+                "style": {
+                  "type": "string",
+                  "enum": [
+                    "REST"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "url"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET",
+                    "POST"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/InlinedResource"
+        }
+      ]
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "scope": {
+      "type": "object"
+    },
+    "extensions": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "ContentCategory_Enum": {
+      "type": "string",
+      "enum": [
+        "image",
+        "narrative",
+        "audio",
+        "video",
+        "model",
+        "evidence"
+      ]
+    },
+    "AssetResourceArray": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/AssetRelationship"
+              },
+              {
+                "$ref": "#/definitions/ResourceRelationship"
+              },
+              {
+                "$ref": "#/definitions/AssetInlinedResource"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "AssetGraph": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssetGraphItem"
+          }
+        }
+      ]
+    },
+    "ResourcePlan": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcePlanItem"
+          }
+        }
+      ]
+    },
+    "AssetGraphItem": {
+      "type": "object",
+      "required": [
+        "startNode",
+        "endNode",
+        "relationships"
+      ],
+      "properties": {
+        "startNode": {
+          "type": "string"
+        },
+        "endNode": {
+          "type": "string"
+        },
+        "relationships": {
+          "type": "object"
+        }
+      }
+    },
+    "ResourcePlanItem": {
+      "type": "object",
+      "required": [
+        "label",
+        "resourceElementType",
+        "resourceRef",
+        "resourceElements"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "resourceElementType": {
+          "type": "string"
+        },
+        "resourceRef": {
+          "type": "string"
+        },
+        "resourceElements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcePlanItem"
+          }
+        }
+      }
+    },
+    "ResourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_id",
+        "_bssVer",
+        "_ver",
+        "_links"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "AssetRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_docType",
+        "_assetType",
+        "_id",
+        "_bssVer",
+        "_ver",
+        "_links"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_docType": {
+          "$ref": "#/definitions/DocumentType_Enum"
+        },
+        "_assetType": {
+          "$ref": "#/definitions/AssetType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "DocumentType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "LEARNINGCONTENT",
+        "LEARNINGENGAGEMENT",
+        "LEARNINGPOLICY",
+        "LEARNINGMODEL"
+      ]
+    },
+    "ResourceType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "CONTENT",
+        "INLINED"
+      ]
+    },
+    "AssetType_Enum": {
+      "type": "string",
+      "enum": [
+        "NARRATIVE",
+        "ASSESSMENT-ITEM",
+        "INSTRUCTION",
+        "ASSESSMENT",
+        "TOOL",
+        "AGGREGATE",
+        "PRODUCT",
+        "LEARNINGEXPERIENCE",
+        "ENGAGEMENTPLAN",
+        "USERENGAGEMENT"
+      ]
+    },
+    "HalLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": [
+              "href"
+            ],
+            "properties": {
+              "href": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "HalEmbedded": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "ReducedObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_links"
+      ],
+      "properties": {
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "InlinedResource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "data"
+      ],
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/ContentCategory_Enum"
+        },
+        "model": {
+          "type": "string"
+        },
+        "data": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "AssetInlinedResource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "category",
+        "data"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "category": {
+          "$ref": "#/definitions/ContentCategory_Enum"
+        },
+        "model": {
+          "type": "string"
+        },
+        "data": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

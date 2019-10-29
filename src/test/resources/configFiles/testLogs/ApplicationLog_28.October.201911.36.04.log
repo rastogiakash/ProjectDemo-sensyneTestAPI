@@ -1,0 +1,58 @@
+28/10/2019 23:36:04 automation Reading Environment configuration file
+28/10/2019 23:36:04 automation Reading src//test//resources//configFiles//testData//Config_Test.xlsx
+28/10/2019 23:36:05 automation Reading readEnviromentsUrls
+28/10/2019 23:36:05 automation Environment configuration file sucessfully readed
+28/10/2019 23:36:07 automation Response is  : {
+    "id": 2,
+    "name": "Personalised cufflinks",
+    "price": "45.00"
+}
+28/10/2019 23:36:08 automation Response is  : [
+    {
+        "id": 2,
+        "name": "Personalised cufflinks",
+        "price": "45.00"
+    },
+    {
+        "id": 3,
+        "name": "Kids T-shirt",
+        "price": "19.95"
+    },
+    {
+        "id": 4,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 5,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 6,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 7,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 8,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 9,
+        "name": "Lavender heart",
+        "price": "9.25"
+    }
+]
+28/10/2019 23:36:09 automation Response is  : 
+28/10/2019 23:36:09 automation Response is  : {
+    "detail": "'9.25' is not of type 'number'",
+    "status": 400,
+    "title": "Bad Request",
+    "type": "about:blank"
+}

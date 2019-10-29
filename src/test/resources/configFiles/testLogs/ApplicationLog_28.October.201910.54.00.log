@@ -1,0 +1,9 @@
+28/10/2019 22:54:00 automation Reading Environment configuration file
+28/10/2019 22:54:00 automation Reading src//test//resources//configFiles//testData//Config_Test.xlsx
+28/10/2019 22:54:00 automation Reading readEnviromentsUrls
+28/10/2019 22:54:00 automation Environment configuration file sucessfully readed
+28/10/2019 22:54:03 automation Response is  : {
+    "id": 2,
+    "name": "Personalised cufflinks",
+    "price": "45.00"
+}
