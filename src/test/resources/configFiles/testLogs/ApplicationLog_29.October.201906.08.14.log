@@ -1,0 +1,10 @@
+29/10/2019 18:08:14 automation Reading Environment configuration file
+29/10/2019 18:08:14 automation Reading src//test//resources//configFiles//testData//Config_Test.xlsx
+29/10/2019 18:08:14 automation Reading readEnviromentsUrls
+29/10/2019 18:08:14 automation Environment configuration file sucessfully readed
+29/10/2019 18:08:17 automation Response is  : {
+    "detail": "'price' is a required property",
+    "status": 400,
+    "title": "Bad Request",
+    "type": "about:blank"
+}

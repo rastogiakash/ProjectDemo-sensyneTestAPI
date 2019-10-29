@@ -10,7 +10,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(monochrome = true, strict = false,
         features = "src/test/resources/features",
-        glue = { "com.api.project.demo.stepdefinations" }, tags = { "@Demo" },
+        glue = { "com.api.project.demo.stepdefinations" }, tags = { "@Exception" },
         plugin = { "pretty", "html:target/cucumber",
                 "json:target/cucumber.json", "junit:target/cucumber.xml",
                 "json:target/cucumber-json-report.json",

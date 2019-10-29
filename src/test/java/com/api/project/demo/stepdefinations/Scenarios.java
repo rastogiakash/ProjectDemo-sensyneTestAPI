@@ -1,6 +1,8 @@
 package com.api.project.demo.stepdefinations;
 
 import static com.api.project.demo.utility.ResponseUtils.response;
+//import static com.pearson.glp.qe.utility.ResponseUtils.response;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.assertTrue;
 
 import java.util.HashMap;
@@ -10,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.api.project.demo.base.SerenityBase;
+import com.api.project.demo.pojoClasses.InvalidPayloadErrorResponse;
 import com.api.project.demo.utility.ResponseUtils;
 import com.api.project.demo.utility.SerenityRESTService;
 import com.api.project.demo.utility.Utility;
@@ -26,6 +29,8 @@ public class Scenarios extends SerenityBase {
     protected static Integer getProductID = 0;
     protected static Map<String, String> updatedPayload = new HashMap<>();
     protected static String payload = null;
+    protected static InvalidPayloadErrorResponse invalidPayloadErrorResponse = null;                           // Error Response with Invalid URI
+    
 
     @Given("^I have the base URL$")
     public void i_have_the_base_url() throws Throwable {
@@ -126,4 +131,19 @@ public class Scenarios extends SerenityBase {
     
     }
 
+    @Then("^I should receive the correct error response payload with error desc \"([^\"]*)\"$")
+    public void i_should_receive_the_correct_error_response_payload_with_error_desc(String expectedErrorDetailResponse) throws Exception {
+    	
+    	invalidPayloadErrorResponse = response.then().extract().as(InvalidPayloadErrorResponse.class); // Deserialization to Pojo
+    	assertThat(invalidPayloadErrorResponse.getDetail()).isEqualTo(expectedErrorDetailResponse); // Assert Error Code in Response
+    }
+    
+    
+    @Then("^I should receive the correct error response code \"([^\"]*)\"$")
+    public void i_should_receive_the_correct_error_response_code_something(
+            String argStatusCode) throws Throwable {
+        int expectedStatusCode = Integer.parseInt(argStatusCode);
+        ResponseUtils.assertReponseStatus(expectedStatusCode);
+    }
+    
 }

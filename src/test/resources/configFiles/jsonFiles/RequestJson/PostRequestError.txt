@@ -1,0 +1,5 @@
+{
+  "name": "Lavender heart",
+  "product_code": 1,
+  "product_price": 9.25
+}
