@@ -1,0 +1,215 @@
+29/10/2019 14:07:41 automation Reading Environment configuration file
+29/10/2019 14:07:41 automation Reading src//test//resources//configFiles//testData//Config_Test.xlsx
+29/10/2019 14:07:41 automation Reading readEnviromentsUrls
+29/10/2019 14:07:41 automation Environment configuration file sucessfully readed
+29/10/2019 14:07:44 automation Response is  : {
+    "id": 2,
+    "name": "Personalised cufflinks",
+    "price": "45.00"
+}
+29/10/2019 14:07:44 automation Response is  : [
+    {
+        "id": 2,
+        "name": "Personalised cufflinks",
+        "price": "45.00"
+    },
+    {
+        "id": 3,
+        "name": "Kids T-shirt",
+        "price": "19.95"
+    },
+    {
+        "id": 5,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 6,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 7,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 8,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 9,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 10,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 11,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 13,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 14,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 15,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 16,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 17,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 18,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 19,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 20,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 21,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 23,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 25,
+        "name": "Lavender heart",
+        "price": "9.25"
+    }
+]
+29/10/2019 14:07:45 automation Response is  : 
+29/10/2019 14:07:45 automation Response is  : 
+29/10/2019 14:07:45 automation Response is  : [
+    {
+        "id": 2,
+        "name": "Personalised cufflinks",
+        "price": "45.00"
+    },
+    {
+        "id": 3,
+        "name": "Kids T-shirt",
+        "price": "19.95"
+    },
+    {
+        "id": 5,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 6,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 7,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 8,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 9,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 10,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 11,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 13,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 14,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 15,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 16,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 17,
+        "name": "Lavender hearts",
+        "price": "9.25"
+    },
+    {
+        "id": 18,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 19,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 20,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 21,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 23,
+        "name": "Lavender heart",
+        "price": "9.25"
+    },
+    {
+        "id": 26,
+        "name": "Lavender heart",
+        "price": "9.25"
+    }
+]

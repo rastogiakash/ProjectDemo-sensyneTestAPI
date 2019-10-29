@@ -35,8 +35,8 @@ Feature: List of Product scenario
 		@Demo
     Scenario: Delete a product - DELETE 1 product Request
 		Given I have the base URL
-		When I send the DELETE request for "/product/24"
+		When I send the DELETE request for "/product/25"
 		Then I should receive the correct response code "200"
 		Then I send the GET request for "/products"
-		And  I should receive the correct response with one deleted productID as "24"
+		And  I should receive the correct response with one deleted productID as "25"
 		

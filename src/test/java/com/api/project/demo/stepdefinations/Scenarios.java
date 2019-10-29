@@ -106,46 +106,6 @@ public class Scenarios extends SerenityBase {
     @When("^I send the DELETE request for \"([^\"]*)\"$")
     public void i_send_the_DELETE_request_for(String argResourcePath) throws Throwable {   	
     	response = SerenityRESTService.deleteCallWithPathParam(baseUrl + argResourcePath,"json"); // Delete the request node
-    	
-    	
-    	//JSONObject obj = new JSONObject(response.asString());
-    	// obj.remove(getProductName);
-    	/*
-    	System.out.print("\n Response :=======>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + response.asString() + "\n");
-    	
-    	
-        String getProductName = obj.getString("name");
-      	        System.out.print("\n getProductName :=======>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + getProductName + "\n");
-              	
-        if (getProductName.contentEquals(deleteProductName)) {
-           userNameFoundFlag = true;
-           obj.remove(getProductName);
-        }
-        		
-        assertTrue(userNameFoundFlag,
-                "User Name " + deleteProductName + " not found in response"); 	
-    	*/
-    	
-    	
-    	
-   //    response = SerenityRESTService.deleteCallWithHeaderAndPathParamWithoutRequestBody("", endpoint, "json"); // Sends the request
-   /*
-    	JSONArray arr = new JSONArray(response.asString());
-        for (int i = 0; i < arr.length(); i++) {
-        	getProductName = arr.getJSONObject(i).getString("name");
-            
-        	System.out.print("\n getProductName :=======>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + getProductName + "\n");
-            
-        	if (getProductName.equals(deleteProductName)) {
-                userNameFoundFlag = true;
-                arr.remove(i);
-                break;
-            }
-        }
-        		
-        assertTrue(userNameFoundFlag,
-                "User Name " + deleteProductName + " not found in response");
-    */
     }
     
     
@@ -154,9 +114,7 @@ public class Scenarios extends SerenityBase {
     	JSONArray arr = new JSONArray(response.asString());
         for (int i = 0; i < arr.length(); i++) {
         	getProductID = arr.getJSONObject(i).getInt("id");
-            
-        	System.out.print("\n getProductID :=======>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + getProductID + "\n");
-            
+                       
         	if (getProductID.equals(deletedProductID)) {
                 userNameFoundFlag = true;
                 break;
